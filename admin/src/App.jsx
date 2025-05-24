@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Login from './Pages/Login'
   import { ToastContainer } from 'react-toastify';
 import { AdminContext } from './Context/AdminContext';
 import Navbar from './Components/Navbar';
 import Sidebar from './Components/Sidebar';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Dashboard from './Pages/Admin/Dashboard';
 import AllAppointment from './Pages/Admin/AllAppointment';
 import AddDoctor from './Pages/Admin/AddDoctor';
@@ -14,10 +14,20 @@ import { DoctorContext } from './Context/DoctorContext';
 import DoctorDashboard from './Pages/Doctor/DoctorDashboard';
 import DoctorAppointment from './Pages/Doctor/DoctorAppointment';
 import DoctorProfile from './Pages/Doctor/DoctorProfile';
+const navigate = useNavigate();
 
 const App = () => {
   const {aToken} = useContext(AdminContext);
   const {dToken} = useContext(DoctorContext);
+
+   useEffect(() => {
+    const aToken = localStorage.getItem('aToken');
+    const dToken = localStorage.getItem('dToken');
+
+    if (aToken) navigate('/add-doctor');
+    if (dToken) navigate('/doctor-dashboard');
+  }, [navigate]);
+
   return aToken || dToken ? (
     <div>
       <ToastContainer/>
