@@ -10,10 +10,11 @@ const Login = () => {
     const [state,setState] = useState('Admin');
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
-    const navigate = useNavigate();
+   
 
     const {setAToken,backendUrl} =  useContext(AdminContext);
     const {setDToken} = useContext(DoctorContext);
+    const navigate = useNavigate();
 
     const onSubmitHandler = async (event) => {
        event.preventDefault();
@@ -24,7 +25,8 @@ const Login = () => {
             if(data.success) {
                 localStorage.setItem('aToken',data.token)
                 setAToken(data.token)
-                navigate('/add-doctor')
+                 navigate('/admin-dashboard'); 
+             
             } else{
                 toast.error(data.message)
             }
@@ -33,7 +35,7 @@ const Login = () => {
           if(data.success) {
             localStorage.setItem('dToken',data.token)
             setDToken(data.token)
-            navigate('/doctor-dashboard')
+             navigate('/doctor-dashboard');
           }
          }
        } catch (error) {
