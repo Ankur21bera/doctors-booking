@@ -15,19 +15,10 @@ import DoctorDashboard from './Pages/Doctor/DoctorDashboard';
 import DoctorAppointment from './Pages/Doctor/DoctorAppointment';
 import DoctorProfile from './Pages/Doctor/DoctorProfile';
 
+
 const App = () => {
   const {aToken} = useContext(AdminContext);
   const {dToken} = useContext(DoctorContext);
-  const navigate = useNavigate();
-
-
-   useEffect(() => {
-    const aToken = localStorage.getItem('aToken');
-    const dToken = localStorage.getItem('dToken');
-
-    if (aToken) navigate('/add-doctor');
-    if (dToken) navigate('/doctor-dashboard');
-  }, [navigate]);
 
   return aToken || dToken ? (
     <div>
