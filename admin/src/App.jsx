@@ -14,11 +14,12 @@ import { DoctorContext } from './Context/DoctorContext';
 import DoctorDashboard from './Pages/Doctor/DoctorDashboard';
 import DoctorAppointment from './Pages/Doctor/DoctorAppointment';
 import DoctorProfile from './Pages/Doctor/DoctorProfile';
-const navigate = useNavigate();
 
 const App = () => {
   const {aToken} = useContext(AdminContext);
   const {dToken} = useContext(DoctorContext);
+  const navigate = useNavigate();
+
 
    useEffect(() => {
     const aToken = localStorage.getItem('aToken');
