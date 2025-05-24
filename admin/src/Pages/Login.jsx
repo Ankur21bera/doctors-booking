@@ -49,11 +49,11 @@ const Login = () => {
         <p className='text-2xl font-semibold m-auto'><span className='text-blue-700'>{state}</span> Login</p>
         <div className='w-full'>
             <p>Email</p>
-            <input onChange={(e)=>setEmail(e.target.value)} value={email} className='border border-[#dadada] rounded w-full p-2 mt-1' type="email" required/>
+            <input placeholder='admin@doctor.com' onChange={(e)=>setEmail(e.target.value)} value={email} className='border border-[#dadada] rounded w-full p-2 mt-1' type="email" required/>
         </div>
         <div className='w-full'>
             <p>Password</p>
-            <input onChange={(e)=>setPassword(e.target.value)} value={password} className='border border-[#dadada] rounded w-full p-2 mt-1' type="password" required/>
+            <input placeholder='admin123' onChange={(e)=>setPassword(e.target.value)} value={password} className='border border-[#dadada] rounded w-full p-2 mt-1' type="password" required/>
         </div>
         <button type='submit' className='bg-blue-500 cursor-pointer text-white w-full py-2 rounded-md text-base'>Login</button>
         {
