@@ -61,7 +61,7 @@ const Doctors = () => {
     className="group border border-gray-200 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl cursor-pointer transition-all duration-300"
   >
     <img
-      className="w-full h-[800px] object-cover"
+      className="w-full h-[600px] object-cover"
       src={item.image}
       alt={item.name}
     />
