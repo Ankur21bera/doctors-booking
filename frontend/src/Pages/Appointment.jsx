@@ -113,6 +113,10 @@ const bookAppointment = async () => {
   useEffect(()=> {
     console.log(docSlots)
   },[docSlots])
+
+   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // or 'auto'
+  }, []);
   return doctInfo && (
     <div>
       <div className='flex flex-col sm:flex-row gap-4'>
