@@ -93,6 +93,10 @@ const MyAppointments = () => {
       getUserAppointments();
     }
   },[token])
+
+    useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // or 'auto'
+  }, []);
     return (
     <div>
       <p className='pb-3 mt-12 font-medium text-zinc-700 border-b'>My Appointments</p>
