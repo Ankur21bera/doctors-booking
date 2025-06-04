@@ -43,7 +43,7 @@ const Navbar = () => {
 
             {/* Mobile Dropdown Toggle */}
             <div className='md:hidden'>
-              <img className='w-8 rounded-full cursor-pointer' onClick={() => setShowDropdown(!showDropdown)} src={assets.profile_pic} alt="" />
+            <img className='w-8 rounded-full cursor-pointer' onClick={() => setShowDropdown(!showDropdown)} src={userData.image} alt="User" />
               {showDropdown && (
                 <div className='absolute right-0 mt-2 bg-stone-100 text-base font-medium text-gray-700 rounded shadow-md p-4 flex flex-col gap-2 z-30'>
                   <p onClick={() => { navigate('my-profile'); setShowDropdown(false); }} className='hover:text-black cursor-pointer'>My Profile</p>
