@@ -48,7 +48,7 @@ const Navbar = () => {
                 <div className='absolute right-0 mt-2 bg-stone-100 text-base font-medium text-gray-700 rounded shadow-md p-4 flex flex-col gap-2 z-30'>
                   <p onClick={() => { navigate('my-profile'); setShowDropdown(false); }} className='hover:text-black cursor-pointer'>My Profile</p>
                   <p onClick={() => { navigate('my-appointments'); setShowDropdown(false); }} className='hover:text-black cursor-pointer'>My Appointment</p>
-                  <p onClick={() => { setToken(false); setShowDropdown(false); }} className='hover:text-black cursor-pointer'>Logout</p>
+                  <p onClick={() => {logout} className='hover:text-black cursor-pointer'>Logout</p>
                 </div>
               )}
             </div>
